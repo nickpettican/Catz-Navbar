@@ -10,9 +10,11 @@ $(document).ready(function () {
 		}
 		if ($("#burger").hasClass("active")) {
 			toggleColour("black");
-		} else { 
-			toggleColour(returnColour(pagePositionScrolled()));
-		} 
+		} else {
+			$(".navbar-toggle .icon-bar:nth-of-type(1)").css("background-color", returnColour(pagePositionScrolled()));
+			$(".navbar-toggle .icon-bar:nth-of-type(3)").css("background-color", returnColour(pagePositionScrolled()));
+			//toggleColour(returnColour(pagePositionScrolled()));
+		}
 		window.setTimeout(toggleBurger, 500);
 	});
 });
