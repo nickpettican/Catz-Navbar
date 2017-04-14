@@ -16,7 +16,8 @@ $(document).ready(function () {
 		}
 		if ($("#burger").hasClass("active")) {
 			toggleColour("black");
-		} else { 
+		} else {
+			$(".navbar-default .navbar-brand").css("color", returnColour(pagePositionScrolled()));
 			$(".navbar-toggle .icon-bar:nth-of-type(1)").css("background-color", returnColour(pagePositionScrolled()));
 			$(".navbar-toggle .icon-bar:nth-of-type(3)").css("background-color", returnColour(pagePositionScrolled()));
 			//toggleColour(returnColour(pagePositionScrolled()));
