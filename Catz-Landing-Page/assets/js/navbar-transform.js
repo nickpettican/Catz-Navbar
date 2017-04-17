@@ -1,3 +1,9 @@
+/* 
+	* Copyright nickpettican
+ 	* Code licensed under the Apache License v2.0.
+ 	* For details, see http://www.apache.org/licenses/LICENSE-2.0. 
+*/
+
 $(document).ready(toggleNavCollapse);
 
 $(window).scroll(toggleNavCollapse);
@@ -15,8 +21,17 @@ $(document).ready(function () {
 			$(".navbar-toggle .icon-bar:nth-of-type(1)").css("background-color", returnColour(pagePositionScrolled()));
 			$(".navbar-toggle .icon-bar:nth-of-type(3)").css("background-color", returnColour(pagePositionScrolled()));
 			//toggleColour(returnColour(pagePositionScrolled()));
-		}
+		} 
 		window.setTimeout(toggleBurger, 500);
+	});
+});
+
+$(document).ready(function () {
+	$(document).on("click", function (event) {
+		var clickover = $(event.target);
+		if ($(".navbar-collapse").hasClass("collapse in") && !clickover.hasClass("navbar-toggle") && !clickover.hasClass("icon-bar")){
+			$("#burger").click();
+		}
 	});
 });
 
