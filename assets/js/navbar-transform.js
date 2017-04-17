@@ -26,6 +26,15 @@ $(document).ready(function () {
 	});
 });
 
+$(document).ready(function () {
+	$(document).on("click", function (event) {
+		var clickover = $(event.target);
+		if ($(".navbar-collapse").hasClass("collapse in") && !clickover.hasClass("navbar-toggle") && !clickover.hasClass("icon-bar")){
+			$("#burger").click();
+		}
+	});
+});
+
 function pagePositionScrolled() {
 	if ($(".navbar").offset().top > 100) { return true} else { return false}
 }
